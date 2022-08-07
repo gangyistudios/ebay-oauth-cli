@@ -1,0 +1,5 @@
+# Certs
+*.pem
+
+# Ebay config 
+ebay-config.json

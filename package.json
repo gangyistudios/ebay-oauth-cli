@@ -1,0 +1,34 @@
+{
+  "name": "ebay-oauth-cli",
+  "version": "1.0.0",
+  "description": "Generate User or Application Access Tokens for eBay RESTful API's locally from the command line.",
+  "main": "ebay-cli.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/ebay-cli.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwagmi/ebay-oauth-cli.git"
+  },
+  "keywords": [
+    "eBay",
+    "user",
+    "application",
+    "access",
+    "token",
+    "REST",
+    "RESTful",
+    "API",
+    "node",
+    "CLI",
+    "Oauth",
+    "Auth"
+  ],
+  "author": "Gangyi Studios",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dwagmi/ebay-oauth-cli/issues"
+  },
+  "homepage": "https://github.com/dwagmi/ebay-oauth-cli#readme"
+}
