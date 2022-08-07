@@ -30,22 +30,22 @@ const scopes = [
     'https://api.ebay.com/oauth/api_scope/sell.fulfillment'
 ];
 
-function main() {
-    // Initial Ebay Oauth node client 
-    let ebayAuthClient = new EbayAuthToken({
-        filePath: 'ebay-config.json'
-    });
+// Initial Ebay Oauth node client 
+let ebayAuthClient = new EbayAuthToken({
+    filePath: 'ebay-config.json'
+});
 
+function main() {
     if (isAppToken) {
-        clientCredentialFlow(ebayAuthClient);
+        clientCredentialFlow();
     } else {
-        authorizationCodeFlow(ebayAuthClient);
+        authorizationCodeFlow();
     }
 }
 
 // If only Client Credential Flow is required, then no user authorisation is required, 
 // hence no server listener is needed. 
-function clientCredentialFlow(ebayAuthClient) {
+function clientCredentialFlow() {
     const clientScope = 'https://api.ebay.com/oauth/api_scope';
     ebayAuthClient.getApplicationToken(isDebug ? 'SANDBOX' : 'PRODUCTION', clientScope).then((data) => {
         console.log(JSON.parse(data));
@@ -59,9 +59,9 @@ function clientCredentialFlow(ebayAuthClient) {
 // For Authorization Code Flow, we require the user's consent, which they provide by logging
 // in. So we need to set up a server listener at our callback url (set up redirectin eBay here:
 // https://developer.ebay.com/my/auth/ - see README.md for screenshot )
-function authorizationCodeFlow(ebayAuthClient) {
+function authorizationCodeFlow() {
     // Start server listener
-    initServer(ebayAuthClient);
+    initServer();
 
     // Accepts optional values: prompt, state
     let authUrl = ebayAuthClient.generateUserAuthorizationUrl(isDebug ? 'SANDBOX' : 'PRODUCTION', scopes, { prompt: 'login', state: 'custom-state-value' });
@@ -74,7 +74,7 @@ function authorizationCodeFlow(ebayAuthClient) {
 // it will parse the access_token, refresh_token and expiry time. 
 // As eBay requires a proper url, add a line to /etc/hosts to redirect local.host to localhost.
 // See README.md for instructions.
-function initServer(ebayAuthClient) {
+function initServer() {
     // Load certs
     const options = {
         key: fs.readFileSync('key.pem'),
