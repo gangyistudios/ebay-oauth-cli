@@ -3,3 +3,6 @@
 
 # Ebay config 
 ebay-config.json
+
+# Node
+node_modules
