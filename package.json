@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dwagmi/ebay-oauth-cli.git"
+    "url": "git+https://github.com/gangyistudios/ebay-oauth-cli.git"
   },
   "keywords": [
     "eBay",
@@ -28,7 +28,16 @@
   "author": "Gangyi Studios",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dwagmi/ebay-oauth-cli/issues"
+    "url": "https://github.com/gangyistudios/ebay-oauth-cli/issues"
   },
-  "homepage": "https://github.com/dwagmi/ebay-oauth-cli#readme"
+  "homepage": "https://github.com/gangyistudios/ebay-oauth-cli#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "ebay-oauth-nodejs-client": "^1.2.1",
+    "open": "^8.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.6"
+  }
 }
