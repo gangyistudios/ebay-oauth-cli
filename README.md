@@ -80,5 +80,12 @@ For Production app token
 APP_TOKEN=true PRODUCTION=true npm start
 ```
 
+# Dev 
+Use 
+```
+local-ssl-proxy --source 3000 --target 3001 
+```
+to route https://localhost:3000 to http://localhost:3000
+
 ## Final Notes
 As always, open to any suggestions, feedback, improvements! Feel free to drop a line.
