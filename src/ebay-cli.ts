@@ -85,7 +85,7 @@ function initServer() {
     https.createServer(options, function (req, res) {
         var parsed_url = url.parse(req.url, true);
         // Get the code
-        if (parsed_url.pathname == '/api') {
+        if (parsed_url.pathname == '/token') {
             // Send response back to browser
             res.writeHead(200);
             res.end("This browser window can be closed now\n");
